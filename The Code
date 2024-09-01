@@ -1,0 +1,248 @@
+
+starting_tax1 = 0
+starting_insurance_cost = 0
+starting_total_rental_cost = 0
+
+
+car1,kia,price1,li_1,fi_1="1) KIA",3,90,20,50
+car2,camery,price2,li_2,fi_2="2) Camery",2,150,30,70
+car3,pajaero,price3,li_3,fi_3="3) Pajaero",2,70,20,50
+
+
+def car_rental():
+  global kia
+  global camery
+  global pajaero
+
+  global rental_cost_1,inc_cost_1,price1,tax,li_1,fi_1
+  global price3,li_3,fi_3
+  global price2,li_2,fi_2
+  global grand_total 
+
+  print("-------------------------------------------------------------------")
+  print("Select one of the Avaible Cars")
+  print("  Model    | Availability   | Price/Day | Liability Insurance/Day | Full Insurance/Day")
+  print("1) KIA     |    ",kia,"         |    $90    |           $20           |          $50       " )
+  print("2) Camery  |    ",camery,"         |    $150   |           $30           |          $70       " )
+  print("3) Pajaero |    ",pajaero,"         |    $70    |           $20           |          $50       " )
+  print("-------------------------------------------------------------------")
+
+  user_input = int(input("Select Model:"))
+  if user_input == 1:
+    print("You picked KIA")
+    kia = kia - 1 
+    inc = input("Enter 'L' for Liability and 'F' for Full insurance:").lower()
+    while inc != 'f' and inc != 'l' :
+      print("|-------Enter Again-------|")
+      inc = input("Enter 'L' for Liability and 'F' for Full insurance:").lower()
+    if "l" in inc:
+        price1 = 90
+        tax = 37.5
+        rental_cost_1 = price1 * days
+        print("Rent:", rental_cost_1)
+        li_1 = 20
+        inc_cost_1 = li_1 * days 
+        print("Insurance:", inc_cost_1)
+        print("Tax(5% on rental: 37.5)")
+        print("Total:",rental_cost_1+tax+inc_cost_1 )
+        grand_total = rental_cost_1+tax+inc_cost_1 
+
+    elif "f" in inc:
+        price1 = 90
+        tax = 37.5
+        rental_cost_1 = price1 * days
+        print("Rent:", rental_cost_1)
+        fi_1 = 50
+        inc_cost_1 = fi_1 * days 
+        print("Insurance:", inc_cost_1)
+        print("Tax(5% on rental: 37.5)")
+        print("Total:",rental_cost_1+tax+inc_cost_1 )
+        grand_total = rental_cost_1+tax+inc_cost_1 
+          
+  elif user_input == 2:
+    print("You picked Camery")
+    camery = camery - 1
+    days = int(input("Enter How Many Days:"))
+    inc = input("Enter 'L' for Liability and 'F' for Full insurance:").lower()
+    while inc != 'f' and inc != 'l' :
+      print("|-------Enter Again-------|")
+      inc = input("Enter 'L' for Liability and 'F' for Full insurance:").lower()
+    if "l" in inc:
+        price2 = 150
+        tax = 37.5
+        rental_cost_1 = price2 * days
+        print("Rent:", rental_cost_1)
+        li_2 = 30
+        inc_cost_1 = li_2 * days 
+        print("Insurance:", inc_cost_1)
+        print("Tax(5% on rental: 37.5)")
+        print("Total:",rental_cost_1+tax+inc_cost_1 )
+        grand_total = rental_cost_1+tax+inc_cost_1
+           
+    elif "f" in inc:
+        price2 = 150
+        tax = 37.5
+        rental_cost_1 = price2 * days
+        print("Rent:", rental_cost_1)
+        fi_2 = 70
+        inc_cost_1 = fi_2 * days 
+        print("Insurance:", inc_cost_1)
+        print("Tax(5% on rental: 37.5)")
+        print("Total:",rental_cost_1+tax+inc_cost_1 )
+        grand_total = rental_cost_1+tax+inc_cost_1
+        
+
+  elif user_input == 3:
+    print("You picked Pajaero")
+    pajaero = pajaero - 1
+    days = int(input("Enter How Many Days:"))
+    inc = input("Enter 'L' for Liability and 'F' for Full insurance:").lower()
+    while inc != 'f' and inc != 'l' :
+      print("|-------Enter Again-------|")
+      inc = input("Enter 'L' for Liability and 'F' for Full insurance:").lower()
+    if "l" in inc:
+      price3 = 70
+      tax = 37.5
+      rental_cost_1 = price3 * days
+      print("Rent:", rental_cost_1)
+      li_3 = 20
+      inc_cost_1 = li_3 * days 
+      print("Insurance:", inc_cost_1)
+      print("Tax(5% on rental: 37.5)")
+      print("Total:",rental_cost_1+tax+inc_cost_1 )
+      grand_total = rental_cost_1+tax+inc_cost_1 
+        
+    elif "f" in inc:
+      price3 = 70
+      tax = 37.5
+      rental_cost_1 = price3 * days
+      print("Rent:", rental_cost_1)
+      fi_3 = 50
+      inc_cost_1 = fi_3 * days 
+      print("Insurance:", inc_cost_1)
+      print("Tax(5% on rental: 37.5)")
+      print("Total:",rental_cost_1+tax+inc_cost_1 )
+      grand_total = rental_cost_1+tax+inc_cost_1
+      
+
+  print("Enter Y to go to the Main Menu ")
+  print("Enter N to End the Program")   
+  user_input_11 = input("Back to Main Menu:").lower()
+
+  while user_input_11 != 'y' and user_input_11 != 'n':
+    print("Invalid Input")
+    user_input_11 = input("Back to Main Menu:").lower()
+  if "y"  in user_input_11:
+     print("-------------------------------------------------------------------")
+     entry()
+  elif "n" in user_input_11:
+      print("THE END")
+      exit()     
+
+    
+
+def car_return():
+    print("-------------------------------------------------------------------")
+    print("Please Select the Car you want to Return")
+    print("1)KIA")
+    print("2)Camery")
+    print("3)Pajaero")
+    user_input_car_return = int(input("Which Car whould you like to Return:"))
+    if user_input_car_return == 1:
+      print("You Return KIA.")
+    elif user_input_car_return == 2:
+      print("You Return Camery.")
+    elif user_input_car_return == 3:
+      print("You Return Pajaero.") 
+    global kia
+    global camery
+    global pajaero
+    if user_input_car_return == 1:
+      kia = kia + 1
+    elif user_input_car_return == 2:
+      camery = camery + 1
+    elif user_input_car_return == 3:
+      pajaero = pajaero + 1
+       
+
+
+
+    print("Enter Y to go to the Main Menu ")
+    print("Enter N to End the Program")   
+    user_input_11 = input("Back to Main Menu:").lower()
+    if "y"  in user_input_11:
+     print("-------------------------------------------------------------------")
+     entry()
+    elif "n"  in user_input_11:
+     print("THE END") 
+     exit()
+    while user_input_11 != 'y' and user_input_11 != 'n':
+      print("|-------Invalid Input-------|")
+      print("|-------Enter Again-------|")
+      user_input_11 = input("Back to Main Menu:").lower()
+
+     
+
+def total_payout():
+  def total_payout_1():
+    global starting_tax1
+    global starting_insurance_cost
+    global starting_total_rental_cost
+  total_payout_1()  
+  print("-------------------------------------------------------------------")
+  print("Over All Rental Cost:", rental_cost_1)
+  print('Over All Tax:',tax)
+  print("Over All Insurance Cost:", inc_cost_1)
+  print("Grand Total:", grand_total)
+  print("-------------------------------------------------------------------")
+  
+
+
+  print("Enter Y to go to the Main Menu ")
+  print("Enter N to End the Program")   
+  user_input_11 = input("Back to Main Menu:").lower()
+
+
+  while user_input_11 != 'y' and user_input_11 != 'n':
+    print("|-------Invalid Input-------|")
+    print("|-------Enter Again-------|")
+    user_input_11 = input("Back to Main Menu:").lower()
+  if "y"  in user_input_11:
+    print("-------------------------------------------------------------------")
+    entry()
+  elif "n" in user_input_11:
+    print("THE END") 
+    exit()
+    
+
+
+
+
+def entry():
+  print("      ________")
+  print("    _|      |_|___")
+  print("   |______________|")
+  print("_______O_____O________")
+  print("<----CAR--RENTAL--SYSTEM---->")
+  print("-------------------------------------------------------------------")
+  print("Please Select One")
+  print("1)Car Rental")
+  print("2)Car Return")
+  print("3)print the total")
+  user_input_entry = input("Enter:")
+    
+
+  while user_input_entry != '1' and user_input_entry != '2'  and user_input_entry != '3' :
+    print("|-------Invalid Input-------|")
+    print("|-------Enter Again-------|")
+    entry()
+  if "1" in user_input_entry:
+    car_rental()
+  elif "2" in user_input_entry:
+    car_return()    
+  elif "3" in user_input_entry:
+    total_payout()  
+    
+     
+entry()
+
